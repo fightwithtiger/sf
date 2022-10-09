@@ -2887,7 +2887,7 @@ const jsx = (
 }// , React.createElement("h1", {}, "JSX"))
 ```
 
-![image-20221008200237137](../public/image-20221008200237137.png)
+![image-20221008200237137](./imgs/image-20221008200237137.png)
 
 所以怎么去生成这个jsx编译后的vnode本身不需要我们关心，react利用babel去做了这个操作，后面涉及到vnode怎么转换成真是dom才是需要去考虑的。
 
@@ -3040,7 +3040,7 @@ class ClassComponent extends Component {
 
 得到的vnode是这个样子
 
-![image-20221009101131948](../public/image-20221009101131948.png)
+![image-20221009101131948](./imgs/image-20221009101131948.png)
 
 可以看到在props里就会有一个onClick方法。
 
