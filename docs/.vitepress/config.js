@@ -7,5 +7,5 @@ module.exports = {
   markdown: {
     lineNumbers: true
   },
-  outDir: resolve(__dirname, '../dist')
+  outDir: resolve(__dirname, '../../dist')
 }
