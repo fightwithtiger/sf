@@ -5,9 +5,9 @@
   "packageManager": "pnpm@7.10.0",
   "main": "index.js",
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
-    "serve": "vitepress serve docs",
+    "dev": "vitepress dev src",
+    "build": "vitepress build src",
+    "serve": "vitepress serve src",
     "release": "pnpm run build && git add . && git commit -m'update' && git push"
   },
   "keywords": [],
