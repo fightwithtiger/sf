@@ -3281,3 +3281,92 @@ const vnode = type.render(props, ref)
   ```
 
   
+
+## 86. 如何使用 chrome devtool 分析前端代码执行耗时和内存占用
+
+主要用devtool两个工具：perfomance， Memory
+
+https://blog.csdn.net/weixin_43487782/article/details/122759231
+
+## 87. koa洋葱模型
+
+Koa的洋葱模型是以next()函数为分割点，先由外到内执行Request的逻辑，然后再由内到外执行Response的逻辑，这里的request的逻辑，我们可以理解为是next之前的内容，response的逻辑是next函数之后的内容，也可以说每一个中间件都有两次处理时机。洋葱模型的核心原理主要是借助compose方法。
+
+https://blog.csdn.net/sinat_41696687/article/details/124162747
+
+
+
+## 88. 64匹马,8个赛道,找出前4名最少比赛多少场?
+
+10或者11
+
+https://zhuanlan.zhihu.com/p/398143738
+
+
+
+## 89. webscoket的连接原理
+
+### webscoket替代方案
+
+1. ajax轮询：每隔一段时间客户端就发送一个请求询问，服务端做出响应，非常消耗资源
+2. long poll，长轮询，客户端向服务端发送一个请求询问，服务端不会立刻进行响应，只有当结果除了后才会响应这个请求，长时间等待状态，也消耗资源。
+
+### 介绍
+
+WebSocket是HTML5下一种新的协议。它实现了浏览器与服务器全双工通信，能更好的节省服务器资源和带宽并达到实时通讯的目的。它与HTTP一样通过已建立的TCP连接来传输数据，但是它和HTTP最大不同是：
+
+- WebSocket是一种双向通信协议。在建立连接后，WebSocket服务器端和客户端都能主动向对方发送或接收数据，就像Socket一样；
+- WebSocket需要像TCP一样，先建立连接，连接成功后才能相互通信。
+
+相对于传统HTTP每次请求-应答都需要客户端与服务端建立连接的模式，WebSocket是类似Socket的TCP长连接通讯模式。一旦WebSocket连接建立后，后续数据都以帧序列的形式传输。在客户端断开WebSocket连接或Server端中断连接前，不需要客户端和服务端重新发起连接请求。在海量并发及客户端与服务器交互负载流量大的情况下，极大的节省了网络带宽资源的消耗，有明显的性能优势，且客户端发送和接受消息是在同一个持久连接上发起，实时性优势明显。
+
+相比HTTP长连接，WebSocket有以下特点：
+
+- 是真正的全双工方式，建立连接后客户端与服务器端是完全平等的，可以互相主动请求。而HTTP长连接基于HTTP，是传统的客户端对服务器发起请求的模式。
+- HTTP长连接中，每次数据交换除了真正的数据部分外，服务器和客户端还要大量交换HTTP header，信息交换效率很低。Websocket协议通过第一个request建立了TCP连接之后，之后交换的数据都不需要发送 HTTP header就能交换数据，这显然和原有的HTTP协议有区别所以它需要对服务器和客户端都进行升级才能实现（主流浏览器都已支持HTML5）。此外还有 multiplexing、不同的URL可以复用同一个WebSocket连接等功能。这些都是HTTP长连接不能做到的。
+
+客户端发送数据报文格式
+
+```
+GET /webfin/websocket/ HTTP/1.1
+
+Host: localhost
+
+Upgrade: websocket
+
+Connection: Upgrade
+
+Sec-WebSocket-Key: xqBt3ImNzJbYqRINxEFlkg==
+
+Origin: http://localhost:8080
+
+Sec-WebSocket-Version: 13
+
+```
+
+客户端发起的WebSocket连接报文类似传统HTTP报文，Upgrade：websocket参数值表明这是WebSocket类型请求，Sec-WebSocket-Key是WebSocket客户端发送的一个 base64编码的密文，要求服务端必须返回一个对应加密的Sec-WebSocket-Accept应答，否则客户端会抛出Error during WebSocket handshake错误，并关闭连接。
+
+服务端发送数据报文格式
+
+```
+HTTP/1.1 101 Switching Protocols
+
+Upgrade: websocket
+
+Connection: Upgrade
+
+Sec-WebSocket-Accept: K7DJLdLooIwIG/MOpvWFB3y3FE8=
+
+```
+
+Sec-WebSocket-Accept的值是服务端采用与客户端一致的密钥计算出来后返回客户端的，HTTP/1.1 101 Switching Protocols表示服务端接受WebSocket协议的客户端连接，经过这样的请求-响应处理后，两端的WebSocket连接握手成功, 后续就可以进行TCP通讯了。
+
+
+
+## 90. generator 是如何做到中断和恢复
+
+## 91. 导致js里this指向混乱的原因是什么
+
+## 92. TCP和UDP最大的区别是什么
+
+## 93. typescript is这个关键字是做什么呢
