@@ -1,7 +1,7 @@
 const { resolve } = require('path')
 
 module.exports = {
-  title: 'fightwithtiger',
+  title: 'web前端笔记',
   description: 'A static website for some notes',
   base: '/sf/',
   markdown: {
