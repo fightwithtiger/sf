@@ -1,4 +1,4 @@
-### async/await
+## async/await
 
 async和await本质上就是一个generator和promise的语法糖，当解析到这个语法的时候就会就会把它转换成一个函数包裹着generator执行器。
 

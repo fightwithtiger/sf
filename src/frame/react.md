@@ -1,6 +1,6 @@
-## react基础知识
+# react基础知识
 
-### react的jsx语法
+## react的jsx语法
 
 在react中书写jsx，其实在运行时回被babel进行一次编译转换，编译成React.createElemnt函数嵌套的形式，类似于vue中的render函数，然会结果其实就是一系列的h函数执行结果，也就是vnode。
 
@@ -20,7 +20,7 @@ const jsx = (
 
 所以怎么去生成这个jsx编译后的vnode本身不需要我们关心，react利用babel去做了这个操作，后面涉及到vnode怎么转换成真是dom才是需要去考虑的。
 
-### vnode转换为真实dom
+## vnode转换为真实dom
 
 这里的vnode其实不等于jsx直接生成的vnode，而是经过react加工后的vnode，也就是fiber节点，后续还是统一叫作vnode。
 
@@ -74,14 +74,14 @@ export function updateFragmentComponent(wip) {
 
 注意其实在上面的过程里，会往vnode节点上添加一些属性用于后续操作使用。
 
-### 关于react中setState更新视图
+## 关于react中setState更新视图
 
 在react类组件里，通过调用setState来更新state数据，视图更新。这里会有几个问题：
 
 1. setState同步异步？
 2. 在一个函数中多次调用setState，针对同一个值改变，视图更新几次？
 
-#### 问题一
+## 问题一
 
 ```jsx
 this.setState({
@@ -100,7 +100,7 @@ setState的作用其实就是去更新this.state中的某个属性，但是更�
 
 与之相对的，如果是在setTimeout这种浏览器api中去调用setState，isBatchUpdate就是false，则会立即更新state，就出现了同步的效果。
 
-#### 问题二
+## 问题二
 
 视图更新一次，即使是通过回调的形式去更新state，视图也只更新一次，换种说法就是，react只会用最新的state去更新视图。
 
@@ -148,7 +148,7 @@ this.state = newState
 
 所以无论setState调用了多少次，newVnode只会生成一次，视图也只会更新一次。
 
-### react合成事件
+## react合成事件
 
 在jsx语法中，如果要绑定事件，必须得用on开头的形式，比如
 
@@ -175,7 +175,7 @@ class ClassComponent extends Component {
 
 下面简单点处理其实就可以把onClick转换成小写：onclick，然后创建出真实dom后通过设置dom.onclick = fn即可，这里就是dom0级事件的绑定。
 
-#### 事件代理
+## 事件代理
 
 不过react利用了事件冒泡来进行的事件绑定，具体如下
 
@@ -201,13 +201,13 @@ document['onclick'] = function (event) {
 
 这里直接拿到target，然后就可以在target的事件池里找到对应的事件，把event当作参数传入，然后就可以执行对应函数了。
 
-#### 合成事件
+## 合成事件
 
 对于react的，点击事件中拿到的event参数，可以看到不是原生的NativeEvent，而是react自己创造的一个合成事件对象，其实原生时间上的大多数属性在react合成事件上都有，之所以要多加一层的原因主要是可以兼容多平台，比如阻止事件冒泡，不同浏览器是不同的，但是在合成事件对象上可以添加一个preventDefault方法，然后这个方法里面去做兼容。在react合成事件里也有一个nativeEvent属性来指向真正的原生事件，可以供后续使用。
 
-### react中ref
+## react中ref
 
-#### React.createRef
+## React.createRef
 
 在react中如果是类组件中使用ref需要我们调用React.createRef方法进行创建，而hooks则使用useRef函数进行创建，原理其实都一样。下面通过React.createRef来创建ref
 
@@ -251,7 +251,7 @@ function createRef() {
 
 其实很简单，在input标签上我们通过设置`ref={this.inputRef}`,那么后续在创建真实dom时候就一定有个操作就是把创建好的真实dom赋值给ref指向的this.inputRef，但是如果this.inputRef是一个基本类型，input标签上保存的ref值就不是一个对象的地址而是this.inputRef的值，这样就做不到保存dom了。所以createRef返回的是一个对象，input标签上的ref保存的就是this.inputRef的地址，在保存dom时我只需要这样写`ref.current = dom`即可。根据引用地址，在函数调用时我们就可以通过this.inputRef.current拿到刚刚设置上去的dom了。
 
-#### 原生标签上的ref
+## 原生标签上的ref
 
 继续来看原生html标签上的ref是怎么设置上去的
 
@@ -292,7 +292,7 @@ inputVnode.props.ref.current = inputDom
 
 按照上面步骤就可以把dom设置上去了。最后通过this.inputRef.current既可以拿到标签的真实dom了
 
-#### 类组件上的ref
+## 类组件上的ref
 
 下面这个例子，我将ref设置到class组件上面
 
@@ -334,7 +334,7 @@ class Outer extends Component {
 
 方法也很简单，第一次渲染这个类组件的时候一定会new一个它的实例，那么就在这时把该类实例设置到props.ref.current上即可。
 
-#### 函数式组件上的ref
+## 函数式组件上的ref
 
 函数式组件的ref改变很大的，如果直接给函数式组件设置ref，控制台会报错，需要使用react提供的方式去声明函数式组件才能往上面设置上ref，参考文档https://react.docschina.org/docs/forwarding-refs.html
 
@@ -374,15 +374,15 @@ const vnode = type.render(props, ref)
 
 这样函数式子组件就可以通过第二个参数ref来拿到上层传进来的ref对象，然后子组件中再把这个ref设置到对应的标签上去完事。
 
-#### 类组件，函数组件无真实dom问题
+## 类组件，函数组件无真实dom问题
 
 在源码中有需要获取类组件后者函数组件上的dom来进行更新的操作，但是它们没有，所以就是一个简单的递归操作，找它的子vnode，上面去拿子vnode的真实dom，如果还没有，就继续递归下去。
 
-## 使用react hook中遇到的最难的问题
+# 使用react hook中遇到的最难的问题
 
 https://react.docschina.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies
 
-## setState什么时候会进行同步操作
+# setState什么时候会进行同步操作
 
 https://blog.csdn.net/qq_43182723/article/details/106802413
 https://stackoverflow.com/questions/48563650/does-react-keep-the-order-for-state-updates/48610973#48610973

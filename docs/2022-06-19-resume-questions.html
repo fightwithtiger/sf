@@ -6,8 +6,8 @@
     <title>简历相关问题 | web前端笔记</title>
     <meta name="description" content="A static website for some notes">
     <link rel="stylesheet" href="/sf/assets/style.6bbd6627.css">
-    <link rel="modulepreload" href="/sf/assets/app.8875307b.js">
-    <link rel="modulepreload" href="/sf/assets/2022-06-19-resume-questions.md.84ae16ca.lean.js">
+    <link rel="modulepreload" href="/sf/assets/app.d22e55b7.js">
+    <link rel="modulepreload" href="/sf/assets/2022-06-19-resume-questions.md.6608e181.lean.js">
     
     <script id="check-dark-light">(()=>{const e=localStorage.getItem("vitepress-theme-appearance"),a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
   </head>
@@ -44,8 +44,8 @@
 <span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#F07178;">minChunks</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">2</span></span>
 <span class="line"><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">)</span></span>
 <span class="line"></span></code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>直接将一些较大的在首页不需要用到的库打包到单独文件去，这样就减小了主包app的体积。但是因为多了几个js文件需要在index.html加载后下载，所以也算是问题吧，文件大小和文件数量也是去中间最好。</p><p>在高版本的webpack中使用splitChunks进行代码分割</p><p><a href="https://zhuanlan.zhihu.com/p/152097785" target="_blank" rel="noreferrer">https://zhuanlan.zhihu.com/p/152097785</a></p><p>用SplitChunks插件来控制Webpack打包生成的js文件的内容的精髓就在于，防止模块被重复打包，拆分过大的js文件，合并零散的js文件。最终的目的就是减少请求资源的大小和请求次数。因这两者是互相矛盾的，故要以项目实际的情况去使用SplitChunks插件，需切记中庸之道。</p></div></div></main><!--[--><!--]--><footer class="VPDocFooter" data-v-28eeb31c data-v-74969112><div class="edit-info" data-v-74969112><!----><div class="last-updated" data-v-74969112><p class="VPLastUpdated" data-v-74969112 data-v-cfe4c0cf>Last updated: <time datatime="2022-10-09T09:06:54.000Z" data-v-cfe4c0cf></time></p></div></div><!----></footer><!--[--><!--]--></div></div></div></div></div><footer class="VPFooter" data-v-37134a4b data-v-27be7a67><div class="container" data-v-27be7a67><p class="message" data-v-27be7a67>Released under the MIT License.</p><p class="copyright" data-v-27be7a67>Copyright © 2022 fightwithtiger</p></div></footer><!--[--><!--]--></div></div>
-    <script>__VP_HASH_MAP__ = JSON.parse("{\"2022-06-19-resume-questions.md\":\"84ae16ca\",\"basic_asyncandawait.md\":\"536f5c23\",\"basic_generator.md\":\"923b2fc5\",\"basic_promise.md\":\"cd66cfa5\",\"basic_web-manual.md\":\"90bfbd47\",\"frame_react.md\":\"8534b6e3\",\"frame_vue.md\":\"9e61d47a\",\"index.md\":\"93356c6f\"}")</script>
-    <script type="module" async src="/sf/assets/app.8875307b.js"></script>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"2022-06-19-resume-questions.md\":\"6608e181\",\"basic_asyncandawait.md\":\"238ad5f2\",\"basic_generator.md\":\"0634d544\",\"basic_promise.md\":\"f9fa056f\",\"basic_web-manual.md\":\"edcab0da\",\"frame_react.md\":\"e19b4bcc\",\"frame_vue.md\":\"5089099a\",\"index.md\":\"3d657efd\"}")</script>
+    <script type="module" async src="/sf/assets/app.d22e55b7.js"></script>
     
   </body>
 </html>

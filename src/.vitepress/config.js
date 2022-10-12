@@ -48,14 +48,14 @@ function sidebarBasic() {
   return [
     {
       text: 'Web Manual',
-      collapsible: true,
+      // collapsible: true,
       items: [
         { text: 'common', link: '/basic/web-manual' },
       ]
     },
     {
       text: 'Promise, async/await, Generator',
-      collapsible: true,
+      // collapsible: true,
       items: [
         { text: 'promise', link: '/basic/promise' },
         { text: 'async/await', link: '/basic/asyncAndAwait' },

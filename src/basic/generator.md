@@ -1,5 +1,5 @@
 
-## generator
+# generator
 关于generator的中断机制，可以参考babel转换generator后的代码，下面是一个简版的实现
 ```javascript
 // 生成器函数根据yield语句将代码分割为switch-case块，后续通过切换_context.prev和_context.next来分别执行各个case

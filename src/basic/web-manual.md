@@ -1,10 +1,4 @@
----
-title: 知识点汇总
-date: 2022-06-19 14:21:45
-tags:
----
-
-## 1.首页白屏
+# 1.首页白屏
 
 SSR，服务端渲染，在服务端将渲染逻辑处理好，然后将最终html返回给前端。缺点是增加了服务器的开销，提升了前端人员的开发难度。
 
@@ -20,7 +14,7 @@ SSR，服务端渲染，在服务端将渲染逻辑处理好，然后将最终ht
 css、html嵌套层架不宜过多，嵌套越多，打包后体积越大，浏览器解析起来会慢，样式计算阶段性能开销较大。
 图片懒加载，预加载，路由懒加载，第三方库懒加载，ui样式按需引入，分屏渲染，图片压缩，提取公共模块。
 
-### 浏览器并发数限制
+## 浏览器并发数限制
 
 首先，是基于端口数量和线程切换开销的考虑，浏览器不可能无限量的并发请求，因此衍生出来了并发限制和HTTP/1.1的Keep alive。 所以，IE6/7在HTTP/1.1下的并发才2，但HTTP/1.0却是4。 而随着技术的发展，负载均衡和各类NoSQL的大量应用，基本已经足以应对C10K的问题。 但却并不是每个网站都懂得利用domain hash也就是多域名来加速访问。因此，新的浏览器加大了并发数的限制，但却仍控制在8以内。
 
@@ -39,23 +33,23 @@ css、html嵌套层架不宜过多，嵌套越多，打包后体积越大，浏�
 
 总的来说，各类技术都是为了能让用户更快的看到页面进行下一步操作，但却不必将宝贵的资源浪费在没有必要的重复请求、不看的内容上。
 
-## 2.wx小程序常用api
+# 2.wx小程序常用api
 
 login, getuserInfo, authorize, getSetting, checkSession
 
-## 4.gzip
+# 4.gzip
 
 大流量的WEB站点常常使用GZIP压缩技术来让用户感受更快的速度。这一般是指WWW服务器中安装的一个功能，当有人来访问这个服务器中的网站时，
 服务器中的这个功能就将网页内容压缩后传输到来访的电脑浏览器中显示出来.一般对纯文本内容可压缩到原大小的40%.这样传输就快了，效果就是你点击
 网址后会很快的显示出来.当然这也会增加服务器的负载. 一般服务器中都安装有这个功能模块的。
 
-## 5.node几大模块
+# 5.node几大模块
 
 node天生自带的模块（核心模块），fs, path, url(解析req.url), mime(获取文件类型), express(创建服务)；
 node的第三方模块；通过npm包管理器下载的模块；
 自定义模块（即自己写的js文件；在node环境中运行的js文件，一个文件就是一个模块）。,
 
-## 6.node事件循环队列
+# 6.node事件循环队列
 
 同步和异步任务分别进入不同的执行环境，同步的进入主线程，即主执行栈，异步的进入任务队列。主线程内的任务执行完毕为空，会去任务队列读取对应的任务，推入主线程执行。 
 上述过程的不断重复就是我们说的 Event Loop (事件循环)。
@@ -69,64 +63,64 @@ Node.js 在主线程里维护了一个事件队列，当接到请求后，就将
 
 # 2022--2-17
 
-## 1.你的薪资，税前税后
+# 1.你的薪资，税前税后
 
 实话实说
 
-## 2.你对加班的看法
+# 2.你对加班的看法
 
 不喜欢形式主义加班，完成自己的工作任务或者是团队项目工作量较大时可以接受加班，但是不能够接受为了加班而加班，降低工作
 效率，并且影响身体健康。
 
-## 3.你为什么离职
+# 3.你为什么离职
 
 一、公司加班严重，多次熬夜或通宵，双休不能得到较好大的保证；
 二、项目开发过程中，产品需求变动太频繁，没有很好的规范的开发流程，多次提出建议也没有得到改善；
 三、没有时间提升自己的技术水平
 
-## 4.你有什么爱好
+# 4.你有什么爱好
 
 网球，平时喜欢运动
 
-## 5.你喜欢看书吗
+# 5.你喜欢看书吗
 
 看一些散文或者技术类的文章，平时也喜欢直接看一些学习类的视频
 
-## 3.前端dist构建
+# 3.前端dist构建
 
-## 4.继承
+# 4.继承
 
-## 5.怎么实现一个view-model
+# 5.怎么实现一个view-model
 
-## 6.vue组件间通信
+# 6.vue组件间通信
 
 https://blog.csdn.net/Albert_weiku/article/details/123855707
 
-## 7.geneater
+# 7.geneater
 
-## 8.async 和await底层原理
+# 8.async 和await底层原理
 
 https://www.jianshu.com/p/0f1b6ae1888c
 
-## 9.事件队列
+# 9.事件队列
 
 https://blog.csdn.net/weixin_39991222/article/details/113367173
 
 # 积累
 
-## 1.react阻止事件冒泡方法
+# 1.react阻止事件冒泡方法
 
 https://zhuanlan.zhihu.com/p/26742034
 
-## 2.commonjs和es6module区别
+# 2.commonjs和es6module区别
 
 https://www.zhihu.com/question/62791509/answer/1535800470
 
-## 3.webpack构建原理
+# 3.webpack构建原理
 
 https://www.cnblogs.com/chengxs/p/11022842.html
 
-### webpack与vite打包区别
+## webpack与vite打包区别
 
 webpack会先打包，然后启动开发服务器，请求服务器时直接给予打包结果。 而vite是直接启动开发服务器，请求哪个模块再对该模块进行实时编译。 由于现代浏览器本身就支持ES Module，会自动向依赖的Module发出请求。vite充分利用这一点，将开发环境下的模块文件，就作为浏览器要执行的文件，而不是像webpack那样进行打包合并。 由于vite在启动的时候不需要打包，也就意味着不需要分析模块的依赖、不需要编译，因此启动速度非常快。当浏览器请求某个模块时，再根据需要对模块内容进行编译。这种按需动态编译的方式，极大的缩减了编译时间，项目越复杂、模块越多，vite的优势越明显。 在HMR方面，当改动了一个模块后，仅需让浏览器重新请求该模块即可，不像webpack那样需要把该模块的相关依赖模块全部编译一次，效率更高。 当需要打包到生产环境时，vite使用传统的rollup进行打包，因此，vite的主要优势在开发阶段。另外，由于vite利用的是ES Module，因此在代码中不可以使用CommonJS
 
@@ -134,7 +128,7 @@ webpack会先打包，然后启动开发服务器，请求服务器时直接给�
 
 vite使用esbuild预编译目的：https://cn.vitejs.dev/guide/dep-pre-bundling.html
 
-## 4.tree-shaking原理
+# 4.tree-shaking原理
 
 是一种通过清除多余代码方式来优化项目打包体积的技术，es6module引入进行静态分析，所以编译时可以正确判断到底加载了哪些模块，判断哪些模块和变量未被使用或者引用，进而对代码进行删除。
 
@@ -151,11 +145,11 @@ vite使用esbuild预编译目的：https://cn.vitejs.dev/guide/dep-pre-bundling.
 
 
 
-## 5.webpack打包优化commonChunkPlugin
+# 5.webpack打包优化commonChunkPlugin
 
 https://zhuanlan.zhihu.com/p/261318126.
 
-## 6.微信小程序的双线程模型
+# 6.微信小程序的双线程模型
 
 网页开发，渲染线程和脚本是互斥的，**意思是，当 JavaScript 代码被执行时，GUI 渲染线程会被挂起，等待 JavaScript 引擎线程空闲时再被执行，以免在渲染期间被 JavaScript 重复地修改 DOM 造成不必要的渲染压力。采用互斥的模式等待 JavaScript 代码执行完毕后，可以保证渲染是最终的执行结果。所以浏览器的空闲（Idle）时长也成了衡量网站性能的重要指标之一，空闲时长多代表 JavaScript 逻辑不密集以及 DOM改动频率低，这种情况下浏览器可以更快速顺畅地响应用户的交互行为**，这也是为什么长时间的脚本运行可能会导致页面失去响应的原因，本质就是我们常说的 `JS` 是单线程的
 
@@ -165,7 +159,7 @@ https://zhuanlan.zhihu.com/p/261318126.
 
 https://www.cnblogs.com/ihardcoder/p/14778013.html
 
-## 7.cdn是什么
+# 7.cdn是什么
 
 https://www.zhihu.com/question/36514327?rf=37353035
 
@@ -175,11 +169,11 @@ https://www.zhihu.com/question/36514327?rf=37353035
 （2）通过域名访问资源，首先是通过DNS分查找离用户最近的CDN节点（边缘服务器）的IP
 （3）通过IP访问实际资源时，如果CDN上并没有缓存资源，则会到源站请求资源，并缓存到CDN节点上，这样，用户下一次访问时，该CDN节点就会有对应资源的缓存了。
 
-## 8.如何理解虚拟dom和diff算法
+# 8.如何理解虚拟dom和diff算法
 
 通过新旧虚拟dom对比获得最小dom操作量，配合异步更新策略减少刷新频率，提高性能
 
-## 9.this隐式丢失四种情况
+# 9.this隐式丢失四种情况
 
 1.函数名是别名
 
@@ -249,16 +243,16 @@ var a=1;
 
 
 
-## 11.tree-shaking原理
+# 11.tree-shaking原理
 
 https://blog.csdn.net/frontend_frank/article/details/113821210
 
-## 12. seo优化
+# 12. seo优化
 
 https://juejin.cn/post/6980167371864424456#heading-4
 title, keyword, description, background-image, img-alt, a-ref=nofollow，语义化，提高加载速度
 
-## 13.flex
+# 13.flex
 
 https://juejin.cn/post/7063823914136256543
 flex: flex-grow flex-shrink flex-basis
@@ -269,11 +263,11 @@ flex: flex-grow flex-shrink flex-basis
 auto: 1 1 auto
 none: 0 0 auto
 
-## 14.gpu硬件加速
+# 14.gpu硬件加速
 
 https://juejin.cn/post/6844903649974435854
 
-## 15.javascript中数组是如何存储的
+# 15.javascript中数组是如何存储的
 
 数组中可以存放不同的数据结构，可以存放数组、对象、Number、Undefined、Null、String、Symbol、Boolean、Function等等。
 数组的index是字符串类型的，之所以你可以通过arr[1]，获得对应的数据，是因为Javascript自动将数字转化为字符串。
@@ -292,23 +286,23 @@ ArrayBuffer是创建一块连续的内存，不能直接操作
 
 
 
-## 17.get和post
+# 17.get和post
 
 https://juejin.cn/post/7078956663440408612#heading-4
 
-## 18.什么是灰度发布，蓝绿发布，滚动发布
+# 18.什么是灰度发布，蓝绿发布，滚动发布
 
 https://juejin.cn/post/6951186920953249806
 
-## 19.懒加载
+# 19.懒加载
 
 https://juejin.cn/post/6844904007589183501
 
-## 20 npm run xxx发生了什么
+# 20 npm run xxx发生了什么
 
 https://juejin.cn/post/7078924628525056007
 
-## 21.事件是如何实现的
+# 21.事件是如何实现的
 
 基于发布订阅模式，就是在浏览器加载的时候会读取事件相关的代码，但是只有实际等到具体的事件触发的时候才会执行。
 
@@ -324,7 +318,7 @@ https://juejin.cn/post/7078924628525056007
 
 - [zhuanlan.zhihu.com/p/73091706](https://link.juejin.cn/?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F73091706)
 
-## 22.事件冒泡和捕获
+# 22.事件冒泡和捕获
 
 三个阶段：捕获阶段，处于目标阶段，冒泡阶段
 
@@ -334,7 +328,7 @@ addEventListener第二个参数为true为事件捕获，默认为false
 
 注意这里一定是捕获再冒泡，和js中代码书写顺序无关
 
-## 23.如何使用es5实现const，let
+# 23.如何使用es5实现const，let
 
 ```javascript
 function _const(key, value) {
@@ -372,7 +366,7 @@ console.log('final', myName, age)
 myName = 'patrick'
 ```
 
-## 24.实现一个链式调用，同时实现sleep方法
+# 24.实现一个链式调用，同时实现sleep方法
 
 https://juejin.cn/post/7045918126931705886
 
@@ -449,7 +443,7 @@ u.console("breakfast")
   .console("dinner");
 ```
 
-## 25.实现一个能执行next的中间件函数
+# 25.实现一个能执行next的中间件函数
 
 ```javascript
 /**
@@ -515,7 +509,7 @@ compose(add1, add2, (output) => {
 
 
 
-## 28.vuex中变量打包后存在哪里？刷新后消失怎么实现储存
+# 28.vuex中变量打包后存在哪里？刷新后消失怎么实现储存
 
 因为js代码运行在[内存](https://so.csdn.net/so/search?q=内存&spm=1001.2101.3001.7020)中，代码运行时所有的变量和函数都是保存在 **内存** 中的，通过保存在sessionStorage里或者localStorage里。
 
@@ -569,15 +563,15 @@ compose(add1, add2, (output) => {
 
 
 
-## 30.输入框防抖
+# 30.输入框防抖
 
 https://juejin.cn/post/7040823172094132237
 
-## 31.ES5/ES6 的继承除了写法以外还有什么区别？
+# 31.ES5/ES6 的继承除了写法以外还有什么区别？
 
 https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/20
 
-## 32.JS 异步解决方案的发展历程以及优缺点。
+# 32.JS 异步解决方案的发展历程以及优缺点。
 
 callback-回调地狱
 
@@ -587,9 +581,9 @@ generater-next
 
 async/await-promise语法糖，类似generater
 
-## 33.介绍下 npm 模块安装机制，为什么输入 npm install 就可以自动安装对应的模块？
+# 33.介绍下 npm 模块安装机制，为什么输入 npm install 就可以自动安装对应的模块？
 
-### 当我们执行时会发生什么`npm install`？
+## 当我们执行时会发生什么`npm install`？
 
 我们都知道该命令`npm install`会从 npm-registry 下载依赖模块。
 这可以通过以下任何一种方式。
@@ -598,7 +592,7 @@ async/await-promise语法糖，类似generater
 2. `npm install <dependency_name>`或`npm install <dependency_name>@<version>`- 按名称和版本获取特定依赖项（如果未指定版本，则提取最新版本）。
 3. `npm install <git remote url>`- 获取推送到 github 或 bitbucket 或 gitlab 的库。
 
-### 模块安装过程
+## 模块安装过程
 
 先跳过依赖梳理的过程
 
@@ -608,7 +602,7 @@ async/await-promise语法糖，类似generater
 4. 将模块下载并解压到node_modules目录中，如果模块是可执行模块，将可执行文件放到 .bin 目录中
 5. 同时在模块放在 .npm 中作为副本缓存
 
-### 依赖关系梳理
+## 依赖关系梳理
 
 1. 由于顶层模块下面可能依赖其他模块，模块之间存在嵌套依赖，packge.lock.json记录了模块的逻辑依赖树
 2. 如果完全安装逻辑依赖关系安装，会存在大量重复的包，npm会对安装做dudupe抹平处理，将重复的包安装在顶层
@@ -624,11 +618,11 @@ https://dev.to/shree_j/how-npm-works-internally-4012
 
 https://juejin.cn/post/6969450118839795749#heading-7
 
-### npm yarn 区别
+## npm yarn 区别
 
 https://juejin.cn/post/7103804890547224583
 
-## 34.为什么 Vuex 的 mutation 和 Redux 的 reducer 中不能做异步操作
+# 34.为什么 Vuex 的 mutation 和 Redux 的 reducer 中不能做异步操作
 
 https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/65
 
@@ -636,7 +630,7 @@ https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/65
 
 
 
-## 36.为什么通常在发送数据埋点请求的时候使用的是 1x1 像素的透明 gif 图片？
+# 36.为什么通常在发送数据埋点请求的时候使用的是 1x1 像素的透明 gif 图片？
 
 1. 能够完成整个 HTTP 请求+响应（尽管不需要响应内容）
 2. 触发 GET 请求之后不需要获取和处理数据、服务器也不需要发送数据
@@ -649,21 +643,21 @@ https://mp.weixin.qq.com/s/v6R2w26qZkEilXY0mPUBCw?utm_source=tuicool&utm_medium=
 
 https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/87
 
-## 37.实现一个promise.finally
+# 37.实现一个promise.finally
 
 https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/109
 
-## 38.介绍下 webpack 热更新原理，是如何做到在不刷新浏览器的前提下更新页面
+# 38.介绍下 webpack 热更新原理，是如何做到在不刷新浏览器的前提下更新页面
 
 https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/118
 
-## 39.介绍下前端加密的常见场景和方法
+# 39.介绍下前端加密的常见场景和方法
 
 https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/150
 
-## 40.跨域解决方案以及为什么会有跨域
+# 40.跨域解决方案以及为什么会有跨域
 
-### 同源策略
+## 同源策略
 
 1995年，同源政策由 Netscape 公司引入浏览器。目前，所有浏览器都实行这个政策。
 
@@ -685,7 +679,7 @@ https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/150
 2. 无法访问非同源网页的 DOM （iframe）。
 3. 无法向非同源地址发送 AJAX 请求 或 fetch 请求（可以发送，但浏览器拒绝接受响应）。
 
-### 为什么要有跨域
+## 为什么要有跨域
 
 Ajax 的同源策略主要是为了防止 `CSRF`（跨站请求伪造） 攻击，如果没有 AJAX 同源策略，相当危险，我们发起的每一次 HTTP 请求都会带上请求地址对应的 cookie，那么可以做如下攻击：
 
@@ -707,7 +701,7 @@ DOM同源策略也一样，如果 `iframe` 之间可以跨域访问，可以这�
 
 
 
-## 43.垃圾回收策略
+# 43.垃圾回收策略
 
 在 JavaScript 内存管理中有一个概念叫做 `可达性`，就是那些以某种方式可访问或者说可用的值，它们被保证存储在内存中，反之不可访问则需回收
 
@@ -726,7 +720,7 @@ https://juejin.cn/post/6981588276356317214
 
 1.说一下暂停死区
 
-## 44.Symbol
+# 44.Symbol
 
 https://juejin.cn/post/6844904040367652878
 
@@ -742,7 +736,7 @@ Symbol 有两个主要的使用场景：
 
 从技术上说，Symbol 不是 100% 隐藏的。有一个内置方法 [Object.getOwnPropertySymbols(obj)](https://link.juejin.cn?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FObject%2FgetOwnPropertySymbols) 允许我们获取所有的 Symbol。还有一个名为 [Reflect.ownKeys(obj)](https://link.juejin.cn?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FReflect%2FownKeys) 的方法可以返回一个对象的 **所有** 键，包括 Symbol。所以它们并不是真正的隐藏。但是大多数库、内置方法和语法结构都没有使用这些方法。
 
-## 45.虚拟dom
+# 45.虚拟dom
 
 1.虚拟dom轻量快速：当他们发生变化时通过新旧虚拟dom对比可以得到最小dom操作量，配合异步更新策略减少刷新频率，从而提高性能。
 
@@ -752,7 +746,7 @@ Symbol 有两个主要的使用场景：
 
 
 
-## 47.介绍下BOM
+# 47.介绍下BOM
 
 https://juejin.cn/post/6999817069692731423
 
@@ -760,7 +754,7 @@ BOM是浏览器对象模型（Browser Object Model），js认为整个浏览器�
 
 我们知道DOM是文档对象模型用于表示和操作浏览器的HTML文档部分，所以js进一步认为DOM属于浏览器对象的一部分。除此之外，window上还包括location用于获取页面url地址的位置对象、history浏览器历史记录对象、screen屏幕对象、navigator等。
 
-## 48.请求发了两次的原因
+# 48.请求发了两次的原因
 
 查找原因是浏览器对简单跨域请求和复杂跨域请求的处理区别。
 
@@ -778,7 +772,7 @@ preflighted request在发送真正的请求前, 浏览器会先发送一个方�
 
 后台可以设置Access-Control-Max-Age来控制浏览器在多长时间内（单位s）无需再请求时发送预检请求，从而减少不必要的遇见请求。
 
-## 49.什么是 XSS
+# 49.什么是 XSS
 
 Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。
 
@@ -800,7 +794,7 @@ XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一�
 
 https://juejin.cn/post/6844903685122703367#heading-18
 
-## 50.什么是CSRF攻击
+# 50.什么是CSRF攻击
 
 跨站点请求伪造，指攻击者通过跨站请求，以合法的用户的身份进行非法操作。可以这么理解CSRF攻击：攻击者盗用你的身份，以你的名义向第三方网站发送恶意请求。CRSF能做的事情包括利用你的身份发邮件，发短信，进行交易转账，甚至盗取账号信息。
 
@@ -811,7 +805,7 @@ https://juejin.cn/post/6844903685122703367#heading-18
 3. 验证码。通常情况下，验证码能够很好的遏制CSRF攻击，但是很多情况下，出于用户体验考虑，验证码只能作为一种辅助手段，而不是最主要的解决方案。
 4. referer识别。在HTTP Header中有一个字段Referer，它记录了HTTP请求的来源地址。如果Referer是其他网站，就有可能是CSRF攻击，则拒绝该请求。但是，服务器并非都能取到Referer。很多用户出于隐私保护
 
-## 51.web workder
+# 51.web workder
 
 Web Worker 可以使脚本运行在新的线程中，它们独立于主线程，可以进行大量的计算活动，而不会影响主线程的 UI 渲染。当计算结束之后，它们可以把结果发送给主线程，从而形成了高效、良好的用户体验。
 
@@ -822,7 +816,7 @@ Web Worker 可以使脚本运行在新的线程中，它们独立于主线程，
 
 https://juejin.cn/post/7091068088975622175
 
-## 52.margin塌陷和合并
+# 52.margin塌陷和合并
 
 https://juejin.cn/post/6976272394247897101
 
@@ -830,7 +824,7 @@ https://juejin.cn/post/6976272394247897101
 
 合并：我们发现这两个元素之间，他们的`margin-bottom`和`margin-top`合并了，并且显示的是较大值。这种现象被称为`margin`合并。解决的方式也是通过触发`bfc`来解决
 
-## 53.css中link和@import区别
+# 53.css中link和@import区别
 
 `@import`是依赖css的，存在一定的兼容问题，并且根据浏览器渲染机制来说，他在dom树渲染完成后才会渲染，并且不能被js动态修改。
 
@@ -838,7 +832,7 @@ https://juejin.cn/post/6976272394247897101
 
 https://juejin.cn/post/6844903958889119758
 
-## 54.什么时前端模块化
+# 54.什么时前端模块化
 
 - 将一个复杂的程序依据一定的规则封装成几个块或者文件，并组合在一起
 - 块的内部数据是私有的，只对外暴露一些接口与外部通信
@@ -852,7 +846,7 @@ https://juejin.cn/post/6844903958889119758
 
 nodejs的模块化规范，在服务端最先实现。简称cjs，也可以在浏览器环境使用
 
-### commonjs-cjs
+## commonjs-cjs
 
 1.概念
 
@@ -874,7 +868,7 @@ nodejs的模块化规范，在服务端最先实现。简称cjs，也可以在�
 - 顺序加载
 - 模块加载机制，一旦输出一个值，内部变化就不会影响不到这个值
 
-### AMD规范
+## AMD规范
 
 1.概念
 
@@ -885,7 +879,7 @@ nodejs的模块化规范，在服务端最先实现。简称cjs，也可以在�
 - define 定义代码为块；
 - 通过require方法，实现代码的模块加载。
 
-### CMD规范
+## CMD规范
 
 1.概念 专门用于浏览器端，模块加载都是异步的。代表sea.js AMD & CJS 的结合体
 
@@ -897,7 +891,7 @@ nodejs的模块化规范，在服务端最先实现。简称cjs，也可以在�
     })
 ```
 
-### ES Module
+## ES Module
 
 1.概念 js模块化的官方实现
 
@@ -914,7 +908,7 @@ nodejs的模块化规范，在服务端最先实现。简称cjs，也可以在�
 
 3.特点 值的引用，动态的引用，不会缓存值，模块变量绑定其所在的模块
 
-### CJS && ES6 Module
+## CJS && ES6 Module
 
 - 区别
   
@@ -928,17 +922,17 @@ nodejs的模块化规范，在服务端最先实现。简称cjs，也可以在�
 
 链接：https://juejin.cn/post/7083368198585712654
 
-## 55.babel的原理是什么
+# 55.babel的原理是什么
 
 babel其实是一个转换器，他会将es6+语法代码解析成ast，通过对ast中节点的增加删除和更改将其转换为符合es5规范对的ast，最终将转换后的ast翻译为es5代码。
 
-## 56.const为什么不可以改变
+# 56.const为什么不可以改变
 
 https://juejin.cn/post/6844904088199495693
 
 执行过程中数据存放的形式，引入了新的词法环境而去替代了之前的变量对象，而其中又有了“declarative environment records ”声明性环境记录这种提供了不可变的绑定的关系。这些元素直接将标识符绑定与ECMAScript语言值相关联。
 
-## 57.js作用域和作用域链
+# 57.js作用域和作用域链
 
 作用域：
 
@@ -960,7 +954,7 @@ https://juejin.cn/post/7096818495450513445
 
 
 
-## 59.webpack Plugin 和 Loader 的区别
+# 59.webpack Plugin 和 Loader 的区别
 
 - Loader：
   
@@ -970,7 +964,7 @@ https://juejin.cn/post/7096818495450513445
   
   目的在于解决 loader 无法实现的其他事,它直接作用于 webpack，扩展了它的功能。在 webpack 运行的生命周期中会广播出许多事件，plugin 可以监听这些事件，在合适的时机通过 webpack 提供的 API 改变输出结果。
 
-## 60.Es6 的 let 实现原理
+# 60.Es6 的 let 实现原理
 
 原始es6代码
 
@@ -1003,15 +997,15 @@ funcs[0](); // 0
 
 let 是借助闭包和函数作用域来实现块级作用域的效果的 在不同的情况下 let 的编译结果是不一样的，这算是一种实现方法和思路吧。
 
-#### 闭包
+## 闭包
 
 在 JavaScript 中，根据词法作用域的规则，内部函数总是可以访问其外部函数中声明的变量，当通过调用一个外部函数返回一个内部函数后，即使该外部函数已经执行结束了，但是内部函数引用外部函数的变量依然保存在内存中，我们就把这些变量的集合称为闭包。比如外部函数是 foo，那么这些变量的集合就称为 foo 函数的闭包。
 
-## 61.浏览器页面渲染机制
+# 61.浏览器页面渲染机制
 
 https://juejin.cn/post/6844903815758479374
 
-## 62.require的实现原理
+# 62.require的实现原理
 
 `require`不是黑魔法，整个Node.js的模块加载机制都是`JS`实现的。
 
@@ -1030,7 +1024,7 @@ Node.js实现的这套加载机制叫**CommonJS**。
 
 
 
-## 69.web请求体体数字签名（js加签)
+# 69.web请求体体数字签名（js加签)
 
 目的：防止post传送的数据被篡改，需要前后端进行比对。
 
@@ -1038,11 +1032,11 @@ Node.js实现的这套加载机制叫**CommonJS**。
 
 https://www.dounaite.com/article/6280fd7aac359fc91334c6d4.html
 
-## 70.svelte响应式原理
+# 70.svelte响应式原理
 
 https://zhuanlan.zhihu.com/p/375309019
 
-## 71.原型和原型链
+# 71.原型和原型链
 
 我们先来了解下面引用类型的四个规则：
 
@@ -1056,9 +1050,9 @@ https://zhuanlan.zhihu.com/p/375309019
 
 https://juejin.cn/post/6934498361475072014
 
-## 72.vue和react区别
+# 72.vue和react区别
 
-### 简单介绍下vue
+## 简单介绍下vue
 
 Vue (发音为 /vjuː/，类似 **view**) 是一款用于构建用户界面的 JavaScript 框架。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面。
 
@@ -1067,7 +1061,7 @@ Vue 的两个核心功能：
 - **声明式渲染**：Vue 基于标准 HTML 拓展了一套模板语法，使得我们可以声明式地描述最终输出的 HTML 和 JavaScript 状态之间的关系。
 - **响应性**：Vue 会自动跟踪 JavaScript 状态变化并在改变发生时响应式地更新 DOM。
 
-### 区别
+## 区别
 
 https://cn.vuejs.org/v2/guide/comparison.html
 
@@ -1077,11 +1071,11 @@ React 和 Vue 有许多相似之处，它们都有：
 - 提供了响应式 (Reactive) 和组件化 (Composable) 的视图组件。
 - 将注意力集中保持在核心库，而将其他功能如路由和全局状态管理交给相关的库。
 
-### [运行时性能](https://cn.vuejs.org/v2/guide/comparison.html#运行时性能)
+## [运行时性能](https://cn.vuejs.org/v2/guide/comparison.html#运行时性能)
 
 React 和 Vue 都是非常快的，所以速度并不是在它们之中做选择的决定性因素。对于具体的数据表现，可以移步这个[第三方 benchmark](https://stefankrause.net/js-frameworks-benchmark8/table.html)，它专注于渲染/更新非常简单的组件树的真实性能。
 
-#### 优化
+## 优化
 
 在 React 应用中，当某个组件的状态发生变化时，它会以该组件为根，重新渲染整个组件子树。
 
@@ -1093,13 +1087,13 @@ React 和 Vue 都是非常快的，所以速度并不是在它们之中做选择
 
 Vue 的这个特点使得开发者不再需要考虑此类优化，从而能够更好地专注于应用本身。
 
-### [HTML & CSS](https://cn.vuejs.org/v2/guide/comparison.html#HTML-amp-CSS)
+## [HTML & CSS](https://cn.vuejs.org/v2/guide/comparison.html#HTML-amp-CSS)
 
 在 React 中，一切都是 JavaScript。不仅仅是 HTML 可以用 JSX 来表达，现在的潮流也越来越多地将 CSS 也纳入到 JavaScript 中来处理。这类方案有其优点，但也存在一些不是每个开发者都能接受的取舍。
 
 Vue 的整体思想是拥抱经典的 Web 技术，并在其上进行扩展。我们下面会详细分析一下。
 
-#### JSX vs Templates
+## JSX vs Templates
 
 在 React 中，所有的组件的渲染功能都依靠 JSX。JSX 是使用 XML 语法编写 JavaScript 的一种语法糖。
 
@@ -1119,7 +1113,7 @@ Vue 的整体思想是拥抱经典的 Web 技术，并在其上进行扩展。�
 
 更抽象一点来看，我们可以把组件区分为两类：一类是偏视图表现的 (presentational)，一类则是偏逻辑的 (logical)。我们推荐在前者中使用模板，在后者中使用 JSX 或渲染函数。这两类组件的比例会根据应用类型的不同有所变化，但整体来说我们发现表现类的组件远远多于逻辑类组件。
 
-#### 组件作用域内的 CSS
+## 组件作用域内的 CSS
 
 除非你把组件分布在多个文件上 (例如 [CSS Modules](https://github.com/gajus/react-css-modules))，CSS 作用域在 React 中是通过 CSS-in-JS 的方案实现的 (比如 [styled-components](https://github.com/styled-components/styled-components) 和 [emotion](https://github.com/emotion-js/emotion))。这引入了一个新的面向组件的样式范例，它和普通的 CSS 撰写过程是有区别的。另外，虽然在构建时将 CSS 提取到一个单独的样式表是支持的，但 bundle 里通常还是需要一个运行时程序来让这些样式生效。当你能够利用 JavaScript 灵活处理样式的同时，也需要权衡 bundle 的尺寸和运行时的开销。
 
@@ -1141,9 +1135,9 @@ Vue 的整体思想是拥抱经典的 Web 技术，并在其上进行扩展。�
 
 最后，Vue 的单文件组件里的样式设置是非常灵活的。通过 [vue-loader](https://github.com/vuejs/vue-loader)，你可以使用任意预处理器、后处理器，甚至深度集成 [CSS Modules](https://vue-loader.vuejs.org/en/features/css-modules.html)——全部都在 `<style>` 标签内。
 
-### [规模](https://cn.vuejs.org/v2/guide/comparison.html#规模)
+## [规模](https://cn.vuejs.org/v2/guide/comparison.html#规模)
 
-#### 向上扩展
+## 向上扩展
 
 Vue 和 React 都提供了强大的路由来应对大型应用。React 社区在状态管理方面非常有创新精神 (比如 Flux、Redux)，而这些状态管理模式甚至 [Redux 本身](https://yarnpkg.com/en/packages?q=redux vue&p=1)也可以非常容易的集成在 Vue 应用中。实际上，Vue 更进一步地采用了这种模式 ([Vuex](https://github.com/vuejs/vuex))，更加深入集成 Vue 的状态管理解决方案 Vuex 相信能为你带来更好的开发体验。
 
@@ -1157,7 +1151,7 @@ Vue 和 React 都提供了强大的路由来应对大型应用。React 社区在
 
 而要注意的是这些限制是故意设计的，这有它的优势。例如，如果你的项目需求非常简单，你就不需要自定义生成过程。你能把它作为一个依赖来更新。如果阅读更多关于[不同的设计理念](https://github.com/facebookincubator/create-react-app#philosophy)。
 
-#### 向下扩展
+## 向下扩展
 
 React 学习曲线陡峭，在你开始学 React 前，你需要知道 JSX 和 ES2015，因为许多示例用的是这些语法。你需要学习构建系统，虽然你在技术上可以用 Babel 来实时编译代码，但是这并不推荐用于生产环境。
 
@@ -1171,7 +1165,7 @@ React 学习曲线陡峭，在你开始学 React 前，你需要知道 JSX 和 E
 
 由于起步阶段不需学 JSX，ES2015 以及构建系统，所以开发者只需不到一天的时间阅读[指南](https://cn.vuejs.org/v2/guide/)就可以建立简单的应用程序。
 
-### [原生渲染](https://cn.vuejs.org/v2/guide/comparison.html#原生渲染)
+## [原生渲染](https://cn.vuejs.org/v2/guide/comparison.html#原生渲染)
 
 React Native 能使你用相同的组件模型编写有本地渲染能力的 APP (iOS 和 Android)。能同时跨多平台开发，对开发者是非常棒的。相应地，Vue 和 [Weex](https://weex.apache.org/) 会进行官方合作，Weex 是阿里巴巴发起的跨平台用户界面开发框架，同时也正在 Apache 基金会进行项目孵化，Weex 允许你使用 Vue 语法开发不仅仅可以运行在浏览器端，还能被用于开发 iOS 和 Android 上的原生应用的组件。
 
@@ -1181,7 +1175,7 @@ React Native 能使你用相同的组件模型编写有本地渲染能力的 APP
 
 
 
-## 73. script标签知识点
+# 73. script标签知识点
 
 https://www.jianshu.com/p/03c9c95dc815
 
@@ -1189,7 +1183,7 @@ CSS不阻塞dom的生成。 CSS不阻塞js的加载，但是会阻塞js的执行
 
 
 
-## 74. Symbol.iterator相关知识点
+# 74. Symbol.iterator相关知识点
 
 扩展运算符：...，只有在可迭代对象下才可以用，衍生出来for of，和自定义Symbol.Iterator实现对象的可迭代。
 
@@ -1262,7 +1256,7 @@ const obj3 = {
 
 ```
 
-## 75. map和Object区别
+# 75. map和Object区别
 
 map是干净的只含有显示插入的键
 而普通Object上会有原型上的属性以及方法
@@ -1275,7 +1269,7 @@ map是可迭代的object需要通过获取键来迭代
 map在频繁增删键值对的场景下表现更好
 object在频繁添加和删除键值对的场景下未作出优化。
 
-## 76. 什么是防盗链
+# 76. 什么是防盗链
 
 1.REFERER防盗链
 referer是HTTP协议中request header的一部分，当浏览器向web服务器发送请求的时候，一般会带上Referer，告诉服务器我是从哪个页面链接过来的，服务器基此可以获得一些信息用于处理。如果referer信息不是来自本站，就阻止访问或者跳到其它链接。
@@ -1286,7 +1280,7 @@ Token防盗链通过对时间有关的字符串进行签名，将时间和签名
 
 https://blog.csdn.net/weixin_43869318/article/details/99431769
 
-## 77. 服务器怎么开启gzip
+# 77. 服务器怎么开启gzip
 
 只需要打开配置文件 nginx.conf找到gzip on 把前面的注释符号#去掉即可开启GZIP服务。然后配置GZIP即可。
 
@@ -1300,7 +1294,7 @@ gzip_buffers   4  8k;
 gzip_types   text/plain application/x-javascript text/css  application/xml;
 ```
 
-## 78.面向对象的四个特性总结
+# 78.面向对象的四个特性总结
 
 1. 抽象：关于抽象，就是从具体事物抽出、概括出它们共同的方面、本质属性与关系等，而将个别的、非本质的方面、属性与关系舍弃，这种思维过程，称为抽象。这里主要是注意**概括**两字，抽象其实不关注如何实现的，只需要分析出公共的属性和关系。
 2. 封装：把对象的属性和行为（方法）结合为一个独立的整体，并尽可能隐藏对象的内部实现细节。封装和抽象都是提取出公共的东西，但是不同的是封装注重的是**具体的实现**而抽象只注重**概括**
@@ -1310,19 +1304,19 @@ gzip_types   text/plain application/x-javascript text/css  application/xml;
 
 
 
-## 80. 关于使用useEffect和watchEffect产生的两个问题
+# 80. 关于使用useEffect和watchEffect产生的两个问题
 
-### react-useEffect
+## react-useEffect
 
 产生问题的原因：使用antd表格时，设置coloum选项，在coloum里有个项自定义了一个下拉框，里面的绑定事件也操作了state的某个值，记为A，后面同事不小心把coloum放在了useEffect里，由于没有在useEffect里第二个参数声明A，导致A被拷贝，后续coloum变化时A的值一直不变，这样下拉框一直取值不正确产生问题。
 
 **useEffect中任何state都要声明到第二个参数中，否者就只能得到拷贝**
 
-### vue-watchEffect
+## vue-watchEffect
 
 产生问题原因：在watchEffect里执行了一个函数，这个函数用了一个ref变量，导致这个ref变量改变时也意外地触发了watchEffect，看了下源码发现，watchEffect其实就是new了一个effect，所以在回调里所有被触发的响应式变量都会搜集到这个effect。
 
-## 81. 关于vue3中列表的组件复用导致里面的watch被自动触发的问题
+# 81. 关于vue3中列表的组件复用导致里面的watch被自动触发的问题
 
 场景：
 
@@ -1332,23 +1326,23 @@ https://stackblitz.com/edit/vitejs-vite-m97adn?file=src%2FApp.vue,src%2Fcomponen
 
 
 
-## 82. 关于vue中v-for下，key值的设置问题
+# 82. 关于vue中v-for下，key值的设置问题
 
-### 1. 不设置key
+## 1. 不设置key
 
 如果不设置key，那么key的默认值就会是undefined，这样，如果列表数据发生了变化，在做diff时，每一项数据满足：同层级，同标签，同key（都是undefined），就会认为是一个节点然后进行patch，这样的问题就是造成了所有数据项都要更新，没有复用。
 
-### 2. 使用index作为key
+## 2. 使用index作为key
 
 使用index作为key，好处就是有了复用，但是对于有内部状态的组件来说，会产生bug，比如，每一个子项都有一个输入框，我输入之后，如果只在列表的头部再插入一项，那么根据组件复用，就会产生输入框的值错位的现象。
 
 **但是渲染文本型的长列表时也可以作为一种优化手段**
 
-### 3. 使用id作为key
+## 3. 使用id作为key
 
 有了复用，也初步解决了用index作为key的问题，每一项的id是唯一的，于是针对上面的场景，在diff的时候只会先创建一个元素，然后再添加进头部就完成了，而其他的key值相同，数据没变的情况下什么都不会做。
 
-### 4. 设置一个让组件绝对不会被复用的key值
+## 4. 设置一个让组件绝对不会被复用的key值
 
 场景参考81，官网也提到过：
 
@@ -1359,9 +1353,9 @@ https://stackblitz.com/edit/vitejs-vite-m97adn?file=src%2FApp.vue,src%2Fcomponen
 
 
 
-## 83. eval和with的知识点
+# 83. eval和with的知识点
 
-### with
+## with
 
 ```javascript
 with (expression) {
@@ -1376,7 +1370,7 @@ JavaScript 查找某个未使用命名空间的变量时，会通过作用域链
 跟作用域链中的某个属性同名，则这个变量将指向这个属性值。
 如果沒有同名的属性，则将拋出ReferenceError异常。
 
-#### 性能方面的利与弊
+## 性能方面的利与弊
 利：
 with语句可以在不造成性能损失的情況下，减少变量的长度。
 其造成的附加计算量很少。使用'with'可以减少不必要的指针路径解析运算。
@@ -1419,7 +1413,7 @@ function f(foo, values) {
 但是，ECMAScript 6 标准给Array.prototype添加了一个新属性values，所有数组实例将继承这个属性。
 所以在 ECMAScript 6 环境中，with语句中变量values将指向[1,2,3].values。
 
-###  eval()
+##  eval()
 eval() 函数会将传入的字符串当做 JavaScript 代码进行执行。
 弊端：
 eval() 是一个危险的函数， 它使用与调用者相同的权限执行代码。
@@ -1439,7 +1433,7 @@ eval() 通常比其他替代方法更慢，因为它必须调用 JS 解释器，
 
 
 
-## 85. typescript中interface和type区别
+# 85. typescript中interface和type区别
 
 - interface是通过extends实现的，type是通过&实现的。
 
@@ -1472,13 +1466,13 @@ eval() 通常比其他替代方法更慢，因为它必须调用 JS 解释器，
 
   
 
-## 86. 如何使用 chrome devtool 分析前端代码执行耗时和内存占用
+# 86. 如何使用 chrome devtool 分析前端代码执行耗时和内存占用
 
 主要用devtool两个工具：perfomance， Memory
 
 https://blog.csdn.net/weixin_43487782/article/details/122759231
 
-## 87. koa洋葱模型
+# 87. koa洋葱模型
 
 Koa的洋葱模型是以next()函数为分割点，先由外到内执行Request的逻辑，然后再由内到外执行Response的逻辑，这里的request的逻辑，我们可以理解为是next之前的内容，response的逻辑是next函数之后的内容，也可以说每一个中间件都有两次处理时机。洋葱模型的核心原理主要是借助compose方法。
 
@@ -1486,7 +1480,7 @@ https://blog.csdn.net/sinat_41696687/article/details/124162747
 
 
 
-## 88. 64匹马,8个赛道,找出前4名最少比赛多少场?
+# 88. 64匹马,8个赛道,找出前4名最少比赛多少场?
 
 10或者11
 
@@ -1494,14 +1488,14 @@ https://zhuanlan.zhihu.com/p/398143738
 
 
 
-## 89. webscoket的连接原理
+# 89. webscoket的连接原理
 
-### webscoket替代方案
+## webscoket替代方案
 
 1. ajax轮询：每隔一段时间客户端就发送一个请求询问，服务端做出响应，非常消耗资源
 2. long poll，长轮询，客户端向服务端发送一个请求询问，服务端不会立刻进行响应，只有当结果除了后才会响应这个请求，长时间等待状态，也消耗资源。
 
-### 介绍
+## 介绍
 
 WebSocket是HTML5下一种新的协议。它实现了浏览器与服务器全双工通信，能更好的节省服务器资源和带宽并达到实时通讯的目的。它与HTTP一样通过已建立的TCP连接来传输数据，但是它和HTTP最大不同是：
 
@@ -1553,15 +1547,15 @@ Sec-WebSocket-Accept的值是服务端采用与客户端一致的密钥计算出
 
 
 
-## 90. generator 是如何做到中断和恢复
+# 90. generator 是如何做到中断和恢复
 
 
 
-## 91. 导致js里this指向混乱的原因是什么
+# 91. 导致js里this指向混乱的原因是什么
 
-## 92. TCP和UDP最大的区别是什么
+# 92. TCP和UDP最大的区别是什么
 
-## 93. typescript is这个关键字是做什么呢
+# 93. typescript is这个关键字是做什么呢
 
 ```typescript
 function isString(s: unknown): boolean {
