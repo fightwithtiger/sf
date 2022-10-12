@@ -8,7 +8,7 @@
     "dev": "vitepress dev src",
     "build": "vitepress build src",
     "serve": "vitepress serve src",
-    "release": "pnpm run build && git add . && git commit -m'update' && git push"
+    "push": "pnpm run build && git add . && git commit -m'update' && git push"
   },
   "keywords": [],
   "author": "",
